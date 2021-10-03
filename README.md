@@ -1,4 +1,4 @@
-# ReScript [hyperactiv](https://github.com/elbywan/hyperactiv) bindings
+# ⚡️🔗 [Hyperactiv](https://github.com/elbywan/hyperactiv) bindings for [ReScript](https://rescript-lang.org/)
 
 ## Installation
 
