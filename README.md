@@ -27,10 +27,9 @@ let store = {
 let classStore = {
   open Hyperactiv.Classes
   let storeRef = make({counter: 0})
-  let store = storeRef->unwrap
-  storeRef->computed(() => store.counter = store.counter * 2)
+  storeRef->computed(@this this => this.counter = this.counter * 2)
   storeRef->onChange(logHandler)
-  store
+  storeRef->unwrap
 }
 
 module Root = {

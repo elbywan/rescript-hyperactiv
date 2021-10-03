@@ -46,8 +46,10 @@ module Classes = {
   external makeWithOptions: ('a, ~options: {..}) => t<'a> = "Observable"
 
   external unwrap: t<'a> => 'a = "%identity"
-  @send external computed: (t<'a>, unit => unit) => unit = "computed"
-  @send external computedWithOptions: (t<'a>, unit => unit, ~options: {..}) => unit = "computed"
+  @send external computed: (t<'a>, @this ('a => unit)) => unit = "computed"
+  @send
+  external computedWithOptions: (t<'a>, @this (('a => unit) => unit), ~options: {..}) => unit =
+    "computed"
   @send external dispose: t<'a> => unit = "dispose"
   @send external onChange: (t<'a>, Handlers.handler) => unit = "onChange"
 }
